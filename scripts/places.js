@@ -5,7 +5,7 @@ const places = [
     // Add other places with names and locations
     { name: 'Mechanical Department', latitude: 12.367, longitude: 67.912 },
     { name: 'IT Department', latitude: 12.378, longitude: 67.923 },
-    { name: 'CT Department', latitude: 12.389, longitude: 67.934 },
+    { name: 'CT Department', latitude: 12.388, longitude: 67.934 },
     { name: 'Electrical Department', latitude: 12.400, longitude: 67.945 },
     { name: 'Civil Department', latitude: 12.411, longitude: 67.956 },
     { name: 'Architecture Department', latitude: 12.422, longitude: 67.967 },
