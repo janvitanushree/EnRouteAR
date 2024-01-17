@@ -1,6 +1,6 @@
 // Array to store predefined places with their names and locations
 const places = [
-    { name: 'Canteen', latitude: 12.345, longitude: 67.890 },
+    { name: 'Canteen', latitude: 12.345, longitude: 67.891 },
     { name: 'Work Shop', latitude: 12.356, longitude: 67.901 },
     // Add other places with names and locations
     { name: 'Mechanical Department', latitude: 12.367, longitude: 67.912 },
