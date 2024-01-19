@@ -2,18 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const destinationSelectInput = document.getElementById('select-destination');
     const destinationSelectButton = document.getElementById('get-direction-button');
     const mapContainer = document.getElementById('map');
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
-
-    // Function to get directions from an API
-    const getDirections = async (origin, destination) => {
-        const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY';
-        const apiUrl = `https://maps.googleapis.com/maps/api/directions/json?origin=${origin.latitude},${origin.longitude}&destination=${destination.latitude},${destination.longitude}&key=${apiKey}`;
-    
-<<<<<<< HEAD
-=======
     let map;
 
     // Function to initialize the map and get the user's current location
@@ -91,9 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const apiKey = AIzaSyAsPvQ6Xe3lxNDiIl8CH1AohNlcRu1s8PE;
         const apiUrl = `https://maps.googleapis.com/maps/api/directions/json?origin=${origin.latitude},${origin.longitude}&destination=${destination.latitude},${destination.longitude}&key=${apiKey}`;
 
->>>>>>> be32b1a (Add new file)
-=======
->>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
         try {
             const response = await fetch(apiUrl);
             const data = await response.json();
@@ -118,11 +103,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (destination) {
             try {
                 const userLocation = await getCurrentLocation();
-<<<<<<< HEAD
-<<<<<<< HEAD
-                const directionsData = await getDirections(userLocation, destination);
-                updateARDirections(directionsData);
-=======
                 // Update 2D map with user's current location
                 updateMapCenter(userLocation.latitude, userLocation.longitude);
 
@@ -132,11 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Update 2D map with route
                 updateMapWithRoute(userLocation, destination);
->>>>>>> be32b1a (Add new file)
-=======
-                const directionsData = await getDirections(userLocation, destination);
-                updateARDirections(directionsData);
->>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
             } catch (error) {
                 console.error('Error in retrieving position', error);
             }
@@ -146,29 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
-    // Function to get the user's current location
-    const getCurrentLocation = () => {
-        return new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(
-                position => resolve({
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude
-                }),
-                error => reject(error),
-                { enableHighAccuracy: true, maximumAge: 0, timeout: 27000 }
-            );
-        });
-    };
-
-<<<<<<< HEAD
-=======
->>>>>>> be32b1a (Add new file)
-=======
->>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
     // Populate the dropdown with places from places.js
     places.forEach(place => {
         const option = document.createElement('option');
@@ -179,41 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     destinationSelectButton.addEventListener('click', selectDestination);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
-    // Function to update the 2D map with the route
-    const updateMapWithRoute = (origin, destination) => {
-        const directionsService = new google.maps.DirectionsService();
-        const directionsRenderer = new google.maps.DirectionsRenderer({ map: mapContainer });
-
-        directionsService.route(
-            {
-                origin: new google.maps.LatLng(origin.latitude, origin.longitude),
-                destination: new google.maps.LatLng(destination.latitude, destination.longitude),
-                travelMode: 'WALKING', // Adjust as needed (WALKING, DRIVING, etc.)
-            },
-            (response, status) => {
-                if (status === 'OK') {
-                    directionsRenderer.setDirections(response);
-                } else {
-                    console.error('Directions request failed:', status);
-                }
-            }
-        );
-    };
-
-    // Function to update the 2D map center
-    const updateMapCenter = (latitude, longitude) => {
-        map.setCenter(new google.maps.LatLng(latitude, longitude));
-    };
-});
-<<<<<<< HEAD
-=======
     // End of the 'DOMContentLoaded' event listener
     initMapAndLocation(); // Call the function to initialize map and location
 });
->>>>>>> be32b1a (Add new file)
-=======
->>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5

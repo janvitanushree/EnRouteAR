@@ -35,12 +35,4 @@ AFRAME.registerComponent('gps-camera', {
             }
         );
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> be32b1a (Add new file)
-=======
-});
->>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
