@@ -3,12 +3,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const destinationSelectButton = document.getElementById('get-direction-button');
     const mapContainer = document.getElementById('map');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
 
     // Function to get directions from an API
     const getDirections = async (origin, destination) => {
         const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY';
         const apiUrl = `https://maps.googleapis.com/maps/api/directions/json?origin=${origin.latitude},${origin.longitude}&destination=${destination.latitude},${destination.longitude}&key=${apiKey}`;
     
+<<<<<<< HEAD
 =======
     let map;
 
@@ -88,6 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const apiUrl = `https://maps.googleapis.com/maps/api/directions/json?origin=${origin.latitude},${origin.longitude}&destination=${destination.latitude},${destination.longitude}&key=${apiKey}`;
 
 >>>>>>> be32b1a (Add new file)
+=======
+>>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
         try {
             const response = await fetch(apiUrl);
             const data = await response.json();
@@ -113,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
             try {
                 const userLocation = await getCurrentLocation();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 const directionsData = await getDirections(userLocation, destination);
                 updateARDirections(directionsData);
 =======
@@ -126,6 +133,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Update 2D map with route
                 updateMapWithRoute(userLocation, destination);
 >>>>>>> be32b1a (Add new file)
+=======
+                const directionsData = await getDirections(userLocation, destination);
+                updateARDirections(directionsData);
+>>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
             } catch (error) {
                 console.error('Error in retrieving position', error);
             }
@@ -136,6 +147,9 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
     // Function to get the user's current location
     const getCurrentLocation = () => {
         return new Promise((resolve, reject) => {
@@ -150,8 +164,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
 
+<<<<<<< HEAD
 =======
 >>>>>>> be32b1a (Add new file)
+=======
+>>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
     // Populate the dropdown with places from places.js
     places.forEach(place => {
         const option = document.createElement('option');
@@ -163,6 +180,9 @@ document.addEventListener('DOMContentLoaded', function () {
     destinationSelectButton.addEventListener('click', selectDestination);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
     // Function to update the 2D map with the route
     const updateMapWithRoute = (origin, destination) => {
         const directionsService = new google.maps.DirectionsService();
@@ -189,8 +209,11 @@ document.addEventListener('DOMContentLoaded', function () {
         map.setCenter(new google.maps.LatLng(latitude, longitude));
     };
 });
+<<<<<<< HEAD
 =======
     // End of the 'DOMContentLoaded' event listener
     initMapAndLocation(); // Call the function to initialize map and location
 });
 >>>>>>> be32b1a (Add new file)
+=======
+>>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5

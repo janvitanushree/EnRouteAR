@@ -1,6 +1,9 @@
 // Array to store predefined places with their names and locations
 const places = [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
     { name: 'Canteen', latitude: 12.345, longitude: 67.891 },
     { name: 'Work Shop', latitude: 12.356, longitude: 67.901 },
     // Add other places with names and locations
@@ -14,6 +17,7 @@ const places = [
     { name: 'Girls Hostel', latitude: 12.444, longitude: 67.989 },
     { name: 'Ground', latitude: 12.455, longitude: 67.990 },
     { name: 'Stadium', latitude: 12.466, longitude: 67.991 },
+<<<<<<< HEAD
 =======
     { name: 'Administartive Department', latitude: 21.38542, longitude: 79.30563 },
     { name: 'Architecture Department', latitude: 21.38525, longitude: 79.30653 },
@@ -29,4 +33,6 @@ const places = [
     { name: 'Triveni Boys Hostel', latitude: 21.38836, longitude: 79.30370 },
     { name: 'Work Shop', latitude: 21.38486, longitude: 79.30620 },
 >>>>>>> be32b1a (Add new file)
+=======
+>>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
 ];

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
 /* Basic styling for body and typography */
 body {
   font-family: sans-serif;
@@ -49,6 +52,7 @@ a-scene {
 
 /* Additional styling for other elements */
 /* ... */
+<<<<<<< HEAD
 =======
 body, html {
   margin: 0;
@@ -123,3 +127,5 @@ body, html {
   border: 1px solid white;
 }
 >>>>>>> be32b1a (Add new file)
+=======
+>>>>>>> 45bd8b96236a41585e4c493df4848541f6cdfcf5
