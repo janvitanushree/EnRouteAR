@@ -20,7 +20,7 @@
     "smartphone",
     "campus"
   ],
-  "author": "Manish Borikar, Prankita Potbhare",
+  "author": "",
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^3.0.2",

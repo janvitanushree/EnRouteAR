@@ -1,19 +1,64 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="about.css">
-    <title>About Page</title>
+    <title>Your College - About Us</title>
+    <style>
+        /* Add your CSS styles here if needed */
+        .about-content {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="icon-container">
-        <div class="icon">
-            <span class="horizontal-line"></span>
-            <span class="vertical-line"></span>
-        </div>
-        <p>About Us</p>
-    </div>
+
+<!-- Navigation Bar with About Us Button -->
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#hostels">Hostels</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#additional">Additional Info</a></li>
+        <li><button onclick="toggleAbout()">About Us</button></li>
+    </ul>
+</nav>
+
+<!-- Your Content Sections -->
+<section id="home">
+    <!-- Home content goes here -->
+</section>
+
+<section id="courses">
+    <!-- Courses content goes here -->
+</section>
+
+<section id="hostels">
+    <!-- Hostels content goes here -->
+</section>
+
+<section id="facilities">
+    <!-- Facilities content goes here -->
+</section>
+
+<section id="additional">
+    <!-- Additional Information content goes here -->
+</section>
+
+<!-- About Us Content -->
+<section id="aboutUs" class="about-content">
+    <!-- About Us content goes here -->
+    <p>This section can include detailed information about the college, departments, hostels, facilities, and more.</p>
+</section>
+
+<script>
+    // JavaScript function to toggle the visibility of the About Us content
+    function toggleAbout() {
+        var aboutSection = document.getElementById("aboutUs");
+        aboutSection.style.display = (aboutSection.style.display === 'block') ? 'none' : 'block';
+    }
+</script>
+
 </body>
 </html>
