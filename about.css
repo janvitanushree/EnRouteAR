@@ -1,40 +1,121 @@
-css
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EnRouteAR</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
 
-.icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
+    <!-- Google Maps API script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsPvQ6Xe3lxNDiIl8CH1AohNlcRu1s8PE&libraries=places&callback=initMap" async defer></script>
 
-.icon {
-    position: relative;
-    width: 50px;
-    height: 150px;
-}
+    <script>
+        // Set the base URL for AR.js
+        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/';
+    </script>
+    <link rel="stylesheet" href="styles/index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-.horizontal-line,
-.vertical-line {
-    background-color: black;
-    display: block;
-    position: absolute;
-}
+        .container {
+            position: relative;
+        }
 
-.horizontal-line {
-    width: 100%;
-    height: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-}
+        .icon-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
 
-.vertical-line {
-    width: 5px;
-    height: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-}
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+        }
+
+        .horizontal-line,
+        .vertical-line {
+            background-color: white;
+        }
+
+        .horizontal-line {
+            width: 100%;
+            height: 2px;
+        }
+
+        .vertical-line {
+            width: 2px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="destination-select-container">
+            <select id="select-destination">
+                <option value="example">Select Destination</option>
+                <!-- Add more destination options here -->
+            </select>
+            <button id="get-direction-button">Get Directions</button>
+        </div>
+        <a-scene cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;" raycaster="objects: [gps-entity-place];" vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; sourceWidth: 1920; sourceHeight: 1080; displayWidth: 100%; displayHeight: 100%; debugUIEnabled: true;">
+            <a-camera gps-camera="minDistance: 10; videoTexture: true;" rotation-reader></a-camera>
+        </a-scene>
+
+        <!-- Container for the 2D map -->
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- About Us Icon Container -->
+    <div class="icon-container">
+        <div class="icon" onclick="openAboutUsPage()">
+            <div class="horizontal-line"></div>
+            <div class="vertical-line"></div>
+        </div>
+    </div>
+
+    <!-- About Us Page -->
+    <div id="about-us-page" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.9); text-align: center; padding: 20px;">
+        <h2>About Us</h2>
+        <p>This page provides information about colleges, hotels, departments, and other facilities.</p>
+        <!-- Add more content as needed -->
+        <button onclick="closeAboutUsPage()">Close</button>
+    </div>
+
+    <script src="scripts/places.js"></script>
+    <script src="scripts/gps-entity-place.js"></script>
+    <script src="scripts/gps-camera.js"></script>
+    <script src="scripts/gps-camera-debug.js"></script>
+    <script src="scripts/script.js"></script>
+
+    <script>
+        function openAboutUsPage() {
+            document.getElementById("about-us-page").style.display = "block";
+        }
+
+        function closeAboutUsPage() {
+            document.getElementById("about-us-page").style.display = "none";
+        }
+    </script>
+</body>
+</html>
