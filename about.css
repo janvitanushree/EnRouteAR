@@ -1,7 +1,7 @@
 .icon-container {
     position: fixed;
-    top: 0; /* Change from 'bottom: 0' to 'top: 0' */
-    left: 0;
+    top: 1; /* Change from 'bottom: 0' to 'top: 0' */
+    left: 10;
     right: 0;
     display: flex;
     justify-content: center;
